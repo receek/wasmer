@@ -9,6 +9,7 @@ on:
   push:
     branches:
       - "main"
+      - "my-build"
     tags:
       # this is _not_ a regex, see: https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions#filter-pattern-cheat-sheet
       - "[0-9]+.[0-9]+.[0-9]+*"
@@ -52,7 +53,7 @@ jobs:
             use_sccache: false
             use_rustcache: false
             build_wasm: true
-            enable_llvm: false
+            enable_llvm: true
             enable_v8: false
             enable_wasmi: true
             enable_wamr: true
@@ -106,7 +107,7 @@ jobs:
             #  container: alpine:latest
             #  build_wasm: true
             #  use_sccache: false
-            #  enable_llvm: false
+            #  enable_llvm: true
             #  enable_v8: true
             #  enable_wasmi: true
             #  enable_wamr: false
